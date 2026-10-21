@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRAIN.append: your study buddy</title>
+<meta name="description" content="BRAIN.append is a study buddy: check in, log your minutes, keep your streak, and see where your time goes.">
+<meta name="theme-color" content="#a08b68">
+<meta property="og:title" content="BRAIN.append">
+<meta property="og:description" content="Check in, log your minutes, keep the streak.">
+<link rel="icon" type="image/png" href="/static/img/favicon.png">
+<link rel="apple-touch-icon" href="/static/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/static/frames/f00.jpg">
+<link rel="preload" as="image" href="/static/frames/f01.jpg">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="cover" id="cover">
+  <header class="top"><b>BRAIN.append®</b><nav><button data-go="today">Today</button><button data-go="sessions">Sessions</button><button data-go="subjects">Subjects</button><button data-go="chart">Chart</button></nav></header>
+  <section class="hero">
+    <div class="txt">
+      <div class="fit" id="fit"><h1 id="name" aria-label="BRAIN.append"></h1></div>
+      <p class="sub">Your study buddy. Check in, log your minutes, keep the streak.</p>
+      <button class="enter" id="enter">Enter your room<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="fig" id="fig"><canvas id="cv" width="504" height="576" role="img" aria-label="A fuzzy creature that turns to face your cursor"></canvas></div>
+  </section>
+  <div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+</div>
+<div id="curtain" aria-hidden="true"><div class="pull"><span class="pmas mas"></span><span class="cord"></span><i class="tab" id="tab">Check in</i></div><div class="ctext" id="ctext"></div><span class="cm mas"></span></div>
+
+<div class="room" id="room" hidden>
+  <header class="rbar"><div class="bwrap"><button class="brand" id="home">BRAIN.append®</button><span class="hang mas" aria-hidden="true"></span></div>
+    <nav class="tabs" id="tabs"><button data-v="today">Today</button><button data-v="sessions">Sessions</button><button data-v="subjects">Subjects</button><button data-v="chart">Chart</button></nav></header>
+  <main class="views" id="views"></main>
+</div>
+<div class="win" id="win" hidden><div role="dialog" aria-label="Study time chart"><div class="wt"><span>Study time</span><button id="wx" aria-label="Close chart">✕</button></div><div class="wb"><div class="seg" id="seg"><button data-n="7">7 days</button><button data-n="14">14 days</button><button data-n="30">30 days</button></div><div id="chsum" class="lab" style="margin-bottom:8px"></div><div id="chart"></div></div></div></div>
+<dialog id="dlg"><h3 style="margin:0 0 16px;font-size:1.4rem">Edit session</h3>
+  <label for="eS">Subject</label><input class="field" id="eS"><label for="eD">Date</label><input class="field" id="eD" type="date"><label for="eT">Start time</label><input class="field" id="eT" type="time"><label for="eM">Minutes</label><input class="field" id="eM" type="number" min="1">
+  <div style="display:flex;gap:10px;justify-content:flex-end"><button class="btn line" id="eC">Cancel</button><button class="btn" id="eOk" style="background:var(--ink);color:var(--paper);border-color:var(--ink)">Save changes</button></div></dialog>
+<div id="toast" role="status"></div>
+<noscript><p style="position:fixed;inset:auto 16px 16px;background:#000;color:#eadfc8;padding:12px 16px;border-radius:12px;font:600 15px sans-serif">BRAIN.append needs JavaScript to run.</p></noscript>
+<script src="/static/js/local-api.js" defer></script>
+<script src="/static/js/app.js" defer></script>
+</body>
+</html>
